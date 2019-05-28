@@ -46,12 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Alternativa.cs" />
     <Compile Include="Classes\ConexaoDB.cs" />
-    <Compile Include="FormCriarJogo.cs">
+    <Compile Include="Classes\Jogo.cs" />
+    <Compile Include="Classes\Questao.cs" />
+    <Compile Include="Classes\Tema.cs" />
+    <Compile Include="FormQuestao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCriarJogo.Designer.cs">
-      <DependentUpon>FormCriarJogo.cs</DependentUpon>
+    <Compile Include="FormQuestao.Designer.cs">
+      <DependentUpon>FormQuestao.cs</DependentUpon>
     </Compile>
     <Compile Include="FormJogo.cs">
       <SubType>Form</SubType>
@@ -73,8 +77,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormCriarJogo.resx">
-      <DependentUpon>FormCriarJogo.cs</DependentUpon>
+    <EmbeddedResource Include="FormQuestao.resx">
+      <DependentUpon>FormQuestao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTema.resx">
+      <DependentUpon>FormTema.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

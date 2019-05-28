@@ -1,0 +1,5 @@
+insert into Tema(Descricao) Values ('Meio Ambiente')
+insert into Tema(Descricao) Values ('Reflorestamento')
+insert into Tema(Descricao) Values ('Preservação')
+insert into Tema(Descricao) Values ('Ecossistema')
+insert into Tema(Descricao) Values ('Aquecimento Global')
