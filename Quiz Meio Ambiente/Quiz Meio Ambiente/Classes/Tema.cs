@@ -11,6 +11,14 @@ namespace Quiz_Meio_Ambiente.Classes
         private int idTema;
         private string descricao;
 
+        public Tema(int idTema, string descricao)
+        {
+            this.idTema = idTema;
+            this.descricao = descricao;
+        }
+
+        public Tema() { }        
+
         public int IDTema
         {
             get { return idTema; }

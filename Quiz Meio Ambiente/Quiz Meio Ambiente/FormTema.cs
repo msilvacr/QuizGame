@@ -42,6 +42,7 @@ namespace Quiz_Meio_Ambiente
                     query = string.Format("insert into tema(Descricao) Values('{0}')", textBoxTema.Text.ToUpper());
                     conn.ExecutarManipulacao(CommandType.Text, query); //inserindo tema
                     MessageBox.Show("Tema adicionado.", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Dispose();
                 }
                 else
                 {

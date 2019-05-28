@@ -31,7 +31,6 @@ namespace Quiz_Meio_Ambiente
             PreencherComboBox();
         }
 
-
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult ver = MessageBox.Show("tem certeza que deseja sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
@@ -48,7 +47,6 @@ namespace Quiz_Meio_Ambiente
             frmTema.ShowDialog();
             this.Visible = true;
         }
-
 
         private void PreencherComboBox()
         {
@@ -69,6 +67,12 @@ namespace Quiz_Meio_Ambiente
         private void questionáriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormQuestao formQuestao = new FormQuestao();
+
+            this.Visible = false;
+
+            formQuestao.ShowDialog();
+
+            this.Visible = true;
         }
     }
 }

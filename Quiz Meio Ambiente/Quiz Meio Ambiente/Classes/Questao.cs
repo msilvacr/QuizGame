@@ -11,6 +11,7 @@ namespace Quiz_Meio_Ambiente.Classes
         Tema temaQuestao;
         private int idQuestao;
         private string textoQuestao;
+        Alternativa[] alternativas;
         private bool statusQuestao;
 
         public Questao(Tema temaQuestao, int idQuestao, string textoQuestao)
@@ -38,6 +39,12 @@ namespace Quiz_Meio_Ambiente.Classes
         {
             get { return textoQuestao; }
             set { textoQuestao = value; }
+        }
+
+        public Alternativa[] Alternativas
+        {
+            get { return alternativas; }
+            set { alternativas = value; }
         }
 
         public bool StatusQuestao

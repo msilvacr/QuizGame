@@ -21,5 +21,6 @@ CREATE TABLE Alternativa(
 IDAlternativa INT IDENTITY(1, 1) NOT NULL,
 IDQuestao INT NOT NULL,
 Alternativa VARCHAR(320) NOT NULL,
+Correta BIT NOT NULL,
 FOREIGN KEY (IDQuestao) REFERENCES Questao(IDQuestao),
 PRIMARY KEY (IDAlternativa))
