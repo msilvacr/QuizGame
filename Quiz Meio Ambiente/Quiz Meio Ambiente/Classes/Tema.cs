@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Quiz_Meio_Ambiente.Classes
 {
-    class Tema
+    public class Tema
     {
         private int idTema;
         private string descricao;

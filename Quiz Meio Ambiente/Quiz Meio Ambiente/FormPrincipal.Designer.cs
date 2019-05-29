@@ -99,6 +99,7 @@
             this.buttonIniciar.TabIndex = 2;
             this.buttonIniciar.Text = "IniciarJogo";
             this.buttonIniciar.UseVisualStyleBackColor = true;
+            this.buttonIniciar.Click += new System.EventHandler(this.buttonIniciar_Click);
             // 
             // label1
             // 

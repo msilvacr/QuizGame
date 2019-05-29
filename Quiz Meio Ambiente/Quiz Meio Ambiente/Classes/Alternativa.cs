@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Quiz_Meio_Ambiente.Classes
 {
-    class Alternativa
+    public class Alternativa
     {
         private int idAlternativa;
-        private int idQuestao;
+        private Questao questao;
         private bool correta;
         private string textoAlternativa;
 
@@ -19,15 +19,19 @@ namespace Quiz_Meio_Ambiente.Classes
             this.textoAlternativa = textoAlternativa;
             this.correta = correta;
         }
+
         public Alternativa(int idAlternativa, string textoAlternativa)
         {
             this.idAlternativa = idAlternativa;
             this.textoAlternativa = textoAlternativa;
         }
-        public Alternativa(int idAlternativa, int idQuestao)
+
+        public Alternativa(int idAlternativa, Questao questao, bool correta, string textoAlternativa)
         {
             this.idAlternativa = idAlternativa;
-            this.idQuestao = idQuestao;
+            this.questao = questao;
+            this.correta = correta;
+            this.textoAlternativa = textoAlternativa;
         }
 
         public int IDAlternativa
@@ -36,10 +40,10 @@ namespace Quiz_Meio_Ambiente.Classes
             set { idAlternativa = value; }
         }
 
-        public int IDQuestao
+        public Questao Questao
         {
-            get { return IDQuestao; }
-            set { IDQuestao = value; }
+            get { return questao; }
+            set { questao = value; }
         }
 
         public bool Correta

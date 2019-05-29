@@ -6,9 +6,22 @@ using System.Threading.Tasks;
 
 namespace Quiz_Meio_Ambiente.Classes
 {
-    class Jogo
+    public class Jogo
     {
         private List<Questao> questoes = new List<Questao>();
+
+        public Jogo() { } 
+
+        public Jogo(List<Questao> questoes)
+        {
+            this.questoes = questoes;
+        }
+
+        public List<Questao> Questoes
+        {
+            get { return questoes; }
+            set { questoes = value; }
+        }
 
         public void AdicionarQuestao(Questao questao)
         {
