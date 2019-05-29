@@ -8,9 +8,9 @@ namespace Quiz_Meio_Ambiente.Classes
 {
     public class Jogo
     {
-        public static int QTD_QUESTOES_POR_JOGO = Properties.Settings.Default.qtdQuestoes;
-
-        public static int TEMPO_POR_QUESTAO = Properties.Settings.Default.tempoQuestoes;
+        //public static int QTD_QUESTOES_POR_JOGO = Properties.Settings.Default.qtdQuestoes;
+        //
+        //public static int TEMPO_POR_QUESTAO = Properties.Settings.Default.tempoQuestoes;
 
         private List<Questao> questoes = new List<Questao>();
 
@@ -73,6 +73,16 @@ namespace Quiz_Meio_Ambiente.Classes
         public static void AlterarTempoPorQuestao(int qtd)
         {
             Properties.Settings.Default.tempoQuestoes = qtd;
+        }
+
+        public static int QTD_QUESTOES_POR_JOGO()
+        {
+            return Properties.Settings.Default.qtdQuestoes;
+        }
+
+        public static int TEMPO_POR_QUESTAO()
+        {
+            return Properties.Settings.Default.tempoQuestoes;
         }
     }
 }

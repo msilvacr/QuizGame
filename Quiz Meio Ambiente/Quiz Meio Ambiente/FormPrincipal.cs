@@ -117,7 +117,7 @@ namespace Quiz_Meio_Ambiente
         {
             string query = string.Format("SELECT TOP {0} * FROM QUESTAO "+
                                          "WHERE IDTema = {1} "+
-                                         "ORDER BY NEWID()", Jogo.QTD_QUESTOES_POR_JOGO, tema.IDTema);
+                                         "ORDER BY NEWID()", Jogo.QTD_QUESTOES_POR_JOGO(), tema.IDTema);
 
             DataTable table = conn.ExecutarConsulta(CommandType.Text, query);
 
@@ -180,13 +180,13 @@ namespace Quiz_Meio_Ambiente
 
             int qtd = Convert.ToInt16(conn.ExecutarManipulacao(CommandType.Text, query).ToString());
 
-            if (qtd >= Jogo.QTD_QUESTOES_POR_JOGO)
+            if (qtd >= Jogo.QTD_QUESTOES_POR_JOGO())
             {
                 return true;
             }
             else
             {
-                string msg = string.Format("O tema selecionado não possui questões suficientes ({0}/{1})\nPor favor, adicione novas questões ao tema para continuar", qtd, Jogo.QTD_QUESTOES_POR_JOGO);
+                string msg = string.Format("O tema selecionado não possui questões suficientes ({0}/{1})\nPor favor, adicione novas questões ao tema para continuar", qtd, Jogo.QTD_QUESTOES_POR_JOGO());
                 MessageBox.Show(msg, "aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return false;
             }
@@ -310,7 +310,7 @@ namespace Quiz_Meio_Ambiente
                     else
                     {
                         novoTempo = Convert.ToInt32(qtd);
-                        if (novoTempo >= 10 && novoTempo <= 60)
+                        if (novoTempo >= 5 && novoTempo <= 60)
                         {
                             break;
                         }

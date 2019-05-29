@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.temasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -132,7 +133,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(158, 36);
+            this.label1.Location = new System.Drawing.Point(154, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 25);
             this.label1.TabIndex = 3;
@@ -148,10 +149,11 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form Principal";
+            this.Text = "Bem-vindo";
             this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.VisibleChanged += new System.EventHandler(this.FormPrincipal_VisibleChanged);
             this.menuStrip1.ResumeLayout(false);

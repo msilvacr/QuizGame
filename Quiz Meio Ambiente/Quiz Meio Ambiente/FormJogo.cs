@@ -31,6 +31,9 @@ namespace Quiz_Meio_Ambiente
 
         private void ProximaQuestao()
         {
+            timer.Stop();
+            time = new TimeSpan(0, 0, Jogo.TEMPO_POR_QUESTAO());
+
             txtTextoQuestao.Text = jogo.Questoes[nQuestao].TextoQuestao;
 
             txtA.Text = jogo.Questoes[nQuestao].Alternativas[0].TextoAlternativa;
@@ -38,42 +41,44 @@ namespace Quiz_Meio_Ambiente
             txtC.Text = jogo.Questoes[nQuestao].Alternativas[2].TextoAlternativa;
             txtD.Text = jogo.Questoes[nQuestao].Alternativas[3].TextoAlternativa;
 
-            time = new TimeSpan(0, 0, Jogo.TEMPO_POR_QUESTAO);
-
             this.lblNQuestao.Text = string.Format("{0}/{1}", nQuestao + 1, jogo.Questoes.Count);
 
             DeselecionarRadioButtons();
+            timer.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             time = time.Subtract(TimeSpan.FromSeconds(1));
             lblTime.Text = time.Minutes.ToString() + ":" + time.Seconds.ToString(); ;
+            VerificarTempo();
             timer.Start();
         }
 
         private void FormJogo_Load(object sender, EventArgs e)
         {
-            timer.Start();
             ProximaQuestao();
             DeselecionarRadioButtons();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            timer.Stop();
             if (ChecarRadioButton())
             {
                 verificarQuestao();
 
-                nQuestao++;
-
-                if (nQuestao == Jogo.QTD_QUESTOES_POR_JOGO)
+                if (nQuestao == Jogo.QTD_QUESTOES_POR_JOGO())
                 {
                     ConcluirJogo();
                 }
                 else
                 {
                     ProximaQuestao();
+                    if (nQuestao == Jogo.QTD_QUESTOES_POR_JOGO()-1)
+                    {
+                        button2.Text = "Finalizar";
+                    }
                 }
             }
             else
@@ -84,6 +89,8 @@ namespace Quiz_Meio_Ambiente
 
         private void ConcluirJogo()
         {
+            timer.Stop();
+
             double pontuacao = Jogo.CalcularPorcentagemAcertos(jogo.Questoes);
             int qtdAcertos = Jogo.CalcularQtdAcertos(jogo.Questoes);
 
@@ -139,15 +146,52 @@ namespace Quiz_Meio_Ambiente
                     if(a.TextoAlternativa == texto)
                     {
                         MessageBox.Show("Resposta correta", "Você acertou!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        jogo.Questoes[nQuestao].StatusQuestao = true;
+                        ResponderQuestao(true);
                     }
                     else
                     {
                         MessageBox.Show("Resposta errada...", "", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                        jogo.Questoes[nQuestao].StatusQuestao = false;
+                        ResponderQuestao(false);
                     }
                 }
             }
+        }
+
+        private void VerificarTempo()
+        {
+            if(time.Seconds <= 0)
+            {
+                timer.Stop();
+                MessageBox.Show("O tempo acabou...", "", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                ResponderQuestao(false);
+                timer.Start();
+
+
+                if (nQuestao == Jogo.QTD_QUESTOES_POR_JOGO())
+                {
+                    ConcluirJogo();
+                }
+                else
+                {
+                    ProximaQuestao();
+                    if (nQuestao == Jogo.QTD_QUESTOES_POR_JOGO() - 1)
+                    {
+                        button2.Text = "Finalizar";
+                    }
+                }
+            }
+        }
+
+        private void ResponderQuestao(bool status)
+        {
+            jogo.Questoes[nQuestao].StatusQuestao = status;
+
+            nQuestao++;
+        }
+
+        private void FormJogo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer.Stop();
         }
     }
 }

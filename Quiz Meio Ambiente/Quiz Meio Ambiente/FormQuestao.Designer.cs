@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuestao));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtQuestao = new System.Windows.Forms.TextBox();
-            this.txtA = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtB = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtC = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnProx = new System.Windows.Forms.Button();
             this.txtD = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnProx = new System.Windows.Forms.Button();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.lblTotal = new System.Windows.Forms.Label();
+            this.txtC = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtB = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtA = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtQuestao = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -104,23 +105,92 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Questão";
             // 
-            // label1
+            // lblTotal
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Digite a Questão:";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.Lime;
+            this.lblTotal.Location = new System.Drawing.Point(413, 17);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(0, 20);
+            this.lblTotal.TabIndex = 12;
             // 
-            // txtQuestao
+            // btnFinalizar
             // 
-            this.txtQuestao.Location = new System.Drawing.Point(16, 46);
-            this.txtQuestao.Multiline = true;
-            this.txtQuestao.Name = "txtQuestao";
-            this.txtQuestao.Size = new System.Drawing.Size(548, 59);
-            this.txtQuestao.TabIndex = 1;
+            this.btnFinalizar.Enabled = false;
+            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.Location = new System.Drawing.Point(307, 343);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(141, 28);
+            this.btnFinalizar.TabIndex = 11;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // btnProx
+            // 
+            this.btnProx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProx.Location = new System.Drawing.Point(110, 343);
+            this.btnProx.Name = "btnProx";
+            this.btnProx.Size = new System.Drawing.Size(141, 28);
+            this.btnProx.TabIndex = 10;
+            this.btnProx.Text = "Inserir próxima";
+            this.btnProx.UseVisualStyleBackColor = true;
+            this.btnProx.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtD
+            // 
+            this.txtD.Location = new System.Drawing.Point(16, 298);
+            this.txtD.Multiline = true;
+            this.txtD.Name = "txtD";
+            this.txtD.Size = new System.Drawing.Size(548, 32);
+            this.txtD.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(13, 280);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 16);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Digite a quarta alternativa:";
+            // 
+            // txtC
+            // 
+            this.txtC.Location = new System.Drawing.Point(16, 241);
+            this.txtC.Multiline = true;
+            this.txtC.Name = "txtC";
+            this.txtC.Size = new System.Drawing.Size(548, 32);
+            this.txtC.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(13, 223);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(170, 16);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Digite a terceira alternativa:";
+            // 
+            // txtB
+            // 
+            this.txtB.Location = new System.Drawing.Point(16, 184);
+            this.txtB.Multiline = true;
+            this.txtB.Name = "txtB";
+            this.txtB.Size = new System.Drawing.Size(548, 32);
+            this.txtB.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(13, 166);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(178, 16);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Digite a segunda alternativa:";
             // 
             // txtA
             // 
@@ -141,92 +211,23 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Digite a alternativa CORRETA:";
             // 
-            // txtB
+            // txtQuestao
             // 
-            this.txtB.Location = new System.Drawing.Point(16, 184);
-            this.txtB.Multiline = true;
-            this.txtB.Name = "txtB";
-            this.txtB.Size = new System.Drawing.Size(548, 32);
-            this.txtB.TabIndex = 5;
+            this.txtQuestao.Location = new System.Drawing.Point(16, 46);
+            this.txtQuestao.Multiline = true;
+            this.txtQuestao.Name = "txtQuestao";
+            this.txtQuestao.Size = new System.Drawing.Size(548, 59);
+            this.txtQuestao.TabIndex = 1;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(13, 166);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(178, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Digite a segunda alternativa:";
-            // 
-            // txtC
-            // 
-            this.txtC.Location = new System.Drawing.Point(16, 241);
-            this.txtC.Multiline = true;
-            this.txtC.Name = "txtC";
-            this.txtC.Size = new System.Drawing.Size(548, 32);
-            this.txtC.TabIndex = 7;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(13, 223);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(170, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Digite a terceira alternativa:";
-            // 
-            // txtD
-            // 
-            this.txtD.Location = new System.Drawing.Point(16, 298);
-            this.txtD.Multiline = true;
-            this.txtD.Name = "txtD";
-            this.txtD.Size = new System.Drawing.Size(548, 32);
-            this.txtD.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(13, 280);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Digite a quarta alternativa:";
-            // 
-            // btnProx
-            // 
-            this.btnProx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProx.Location = new System.Drawing.Point(110, 343);
-            this.btnProx.Name = "btnProx";
-            this.btnProx.Size = new System.Drawing.Size(141, 28);
-            this.btnProx.TabIndex = 10;
-            this.btnProx.Text = "Inserir próxima";
-            this.btnProx.UseVisualStyleBackColor = true;
-            this.btnProx.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnFinalizar
-            // 
-            this.btnFinalizar.Enabled = false;
-            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Location = new System.Drawing.Point(307, 343);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(141, 28);
-            this.btnFinalizar.TabIndex = 11;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.Color.Lime;
-            this.lblTotal.Location = new System.Drawing.Point(413, 17);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(0, 20);
-            this.lblTotal.TabIndex = 12;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(13, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(111, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Digite a Questão:";
             // 
             // FormQuestao
             // 
@@ -236,6 +237,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormQuestao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Adicionar Questões";
