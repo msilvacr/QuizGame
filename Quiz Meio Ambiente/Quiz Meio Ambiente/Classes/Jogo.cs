@@ -8,6 +8,10 @@ namespace Quiz_Meio_Ambiente.Classes
 {
     public class Jogo
     {
+        public static int QTD_QUESTOES_POR_JOGO = Properties.Settings.Default.qtdQuestoes;
+
+        public static int TEMPO_POR_QUESTAO = Properties.Settings.Default.tempoQuestoes;
+
         private List<Questao> questoes = new List<Questao>();
 
         public Jogo() { } 
@@ -58,7 +62,17 @@ namespace Quiz_Meio_Ambiente.Classes
         {
             int qtd = Jogo.CalcularQtdAcertos(questoes);
 
-            return (qtd / questoes.Count) * 100;
+            return (qtd * 100 ) / questoes.Count;
+        }
+
+        public static void AlterarQuantidadeQuestoesPorJogo(int qtd)
+        {
+            Properties.Settings.Default.qtdQuestoes = qtd;
+        }
+
+        public static void AlterarTempoPorQuestao(int qtd)
+        {
+            Properties.Settings.Default.tempoQuestoes = qtd;
         }
     }
 }

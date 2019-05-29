@@ -10,5 +10,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DP619-07;Initial Catalog=DB_quiz;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="qtdQuestoes" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="tempoQuestoes" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">21</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

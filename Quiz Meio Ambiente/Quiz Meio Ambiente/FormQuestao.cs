@@ -13,9 +13,13 @@ namespace Quiz_Meio_Ambiente
 {
     public partial class FormQuestao : Form
     {
+        
         ConexaoDB conn = new ConexaoDB();
+
         Tema tema;
+
         List<Questao> questoes = new List<Questao>();
+
         int totalAdd = 0;
 
         public FormQuestao()
@@ -34,14 +38,18 @@ namespace Quiz_Meio_Ambiente
             string query = "Select distinct Descricao from Tema order by Descricao Asc";
 
             DataTable table = conn.ExecutarConsulta(CommandType.Text, query);
-            int i = 0;
-            foreach (DataRow row in table.Rows)
-            {
-                comboBox1.Items.Add(row["Descricao"].ToString());
-                i++;
-            }
 
-            comboBox1.SelectedIndex = 0;
+            if (table.Rows.Count > 0)
+            {
+                int i = 0;
+                foreach (DataRow row in table.Rows)
+                {
+                    comboBox1.Items.Add(row["Descricao"].ToString());
+                    i++;
+                }
+
+                comboBox1.SelectedIndex = 0;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -77,6 +85,7 @@ namespace Quiz_Meio_Ambiente
             }
 
         }
+
         private void LimparTextBox()
         {
             txtQuestao.Text = string.Empty;

@@ -51,6 +51,7 @@ namespace Quiz_Meio_Ambiente.Classes
             get { return correta; }
             set { correta = value; }
         }
+
         public string TextoAlternativa
         {
             get { return textoAlternativa; }

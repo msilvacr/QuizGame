@@ -30,9 +30,12 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.temasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.questionáriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuraçõesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarQuantidadeDeQuestõesPorJogoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alterarTempoPorQuestãosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.buttonIniciar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,6 +46,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adicionarToolStripMenuItem,
+            this.configuraçõesToolStripMenuItem,
             this.sairToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -59,26 +63,49 @@
             this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.adicionarToolStripMenuItem.Text = "Adicionar";
             // 
-            // sairToolStripMenuItem
-            // 
-            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
-            this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
             // temasToolStripMenuItem
             // 
             this.temasToolStripMenuItem.Name = "temasToolStripMenuItem";
-            this.temasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.temasToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.temasToolStripMenuItem.Text = "Temas";
             this.temasToolStripMenuItem.Click += new System.EventHandler(this.temasToolStripMenuItem_Click);
             // 
             // questionáriosToolStripMenuItem
             // 
             this.questionáriosToolStripMenuItem.Name = "questionáriosToolStripMenuItem";
-            this.questionáriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.questionáriosToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.questionáriosToolStripMenuItem.Text = "Questionários";
             this.questionáriosToolStripMenuItem.Click += new System.EventHandler(this.questionáriosToolStripMenuItem_Click);
+            // 
+            // configuraçõesToolStripMenuItem
+            // 
+            this.configuraçõesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alterarQuantidadeDeQuestõesPorJogoToolStripMenuItem,
+            this.alterarTempoPorQuestãosToolStripMenuItem});
+            this.configuraçõesToolStripMenuItem.Name = "configuraçõesToolStripMenuItem";
+            this.configuraçõesToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+            this.configuraçõesToolStripMenuItem.Text = "Configurações";
+            // 
+            // alterarQuantidadeDeQuestõesPorJogoToolStripMenuItem
+            // 
+            this.alterarQuantidadeDeQuestõesPorJogoToolStripMenuItem.Name = "alterarQuantidadeDeQuestõesPorJogoToolStripMenuItem";
+            this.alterarQuantidadeDeQuestõesPorJogoToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
+            this.alterarQuantidadeDeQuestõesPorJogoToolStripMenuItem.Text = "Alterar quantidade de questões por jogo";
+            this.alterarQuantidadeDeQuestõesPorJogoToolStripMenuItem.Click += new System.EventHandler(this.alterarQuantidadeDeQuestõesPorJogoToolStripMenuItem_Click);
+            // 
+            // alterarTempoPorQuestãosToolStripMenuItem
+            // 
+            this.alterarTempoPorQuestãosToolStripMenuItem.Name = "alterarTempoPorQuestãosToolStripMenuItem";
+            this.alterarTempoPorQuestãosToolStripMenuItem.Size = new System.Drawing.Size(286, 22);
+            this.alterarTempoPorQuestãosToolStripMenuItem.Text = "Alterar tempo por questão(s)";
+            this.alterarTempoPorQuestãosToolStripMenuItem.Click += new System.EventHandler(this.alterarTempoPorQuestãosToolStripMenuItem_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(38, 20);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // comboBox1
             // 
@@ -144,6 +171,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button buttonIniciar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem configuraçõesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterarQuantidadeDeQuestõesPorJogoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alterarTempoPorQuestãosToolStripMenuItem;
     }
 }
 

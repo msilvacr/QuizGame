@@ -32,5 +32,29 @@ namespace Quiz_Meio_Ambiente.Properties {
                 return ((string)(this["DB"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int qtdQuestoes {
+            get {
+                return ((int)(this["qtdQuestoes"]));
+            }
+            set {
+                this["qtdQuestoes"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("21")]
+        public int tempoQuestoes {
+            get {
+                return ((int)(this["tempoQuestoes"]));
+            }
+            set {
+                this["tempoQuestoes"] = value;
+            }
+        }
     }
 }
